@@ -2,6 +2,10 @@
 
 ![License: AGPLv3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)
 
+<p align="center">
+  <img src="./assets/10GO-icon.png" alt="10GO: You've got it!" width="126"/>
+</p>
+
 ## Project Overview
 
 10GO is a decentralized platform designed to onboard users from traditional payment systems like Mercado Pago into the world of crypto. By leveraging zero-knowledge proofs for decentralized settlement and account abstraction, 10GO simplifies the transition to crypto for new users, while laying the foundation for future features like collateralized lending and microcredits.
