@@ -12,10 +12,9 @@
 
 ## Repository Structure
 
-- **[Demo](https://example.com)**: Experience 10GO's onboarding from Mercado Pago to crypto.
 - **[Front-end Code](https://github.com/10GO-labs/10GO-frontend)**: Source code for the front-end application.
-- **[Smart Contract Code](https://github.com/10GO-labs/10GO-contracts)**: Smart contracts enabling decentralized settlements.
-- **[ZK Circuits Code](https://github.com/10GO-labs/10GO-zk-circuits)**: Zero-knowledge circuits for transaction validation.
+- **[Smart Contract Code](https://github.com/10GO-labs/10GO-contracts)**: Smart contract for the escrow, enabling decentralized settlements, deployed [here](https://sepolia.etherscan.io/address/0xbc9cA80364f4bbF56211768519db012F0A76aee2#code).
+- **[ZK Circuits Code](https://github.com/yagopajarino/zk-email-minimal)**: Zero-knowledge circuits for transaction validation. Implementation of the zk email library to demonstrate a proof of knowledge from a cryptographically signed email.
 
 ## How It Works
 
