@@ -14,7 +14,7 @@ With 10GO, you've got it! ✊
 
 ## Repository Structure
 
-- **[Front-end Code](https://github.com/10GO-labs/10GO-frontend)**: Source code for the front-end application.
+- **[Front-end Code](https://github.com/NicolasBiondini/zkmp-front)**: Source code for the front-end application.
 - **[Smart Contract Code](https://github.com/10GO-labs/10GO-contracts)**: Smart contract for the escrow, enabling decentralized settlements, deployed [here](https://sepolia.etherscan.io/address/0xbc9cA80364f4bbF56211768519db012F0A76aee2#code).
 - **[ZK Circuits Code](https://github.com/yagopajarino/zk-email-minimal)**: Zero-knowledge circuits for transaction validation. Implementation of the zk email library to demonstrate a proof of knowledge from a cryptographically signed email.
 
