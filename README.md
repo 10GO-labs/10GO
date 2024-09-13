@@ -20,9 +20,48 @@ With 10GO, you've got it! ✊
 
 ## How It Works
 
-1. **Onboarding**: Users create crypto wallets linked to their Mercado Pago email, using account abstraction for a seamless transition to DeFi.
-2. **Decentralized Settlement**: Zero-knowledge proofs ensure secure, decentralized fund transfers between fiat and crypto.
-3. **Future Features**: 10GO will support collateralized lending and microcredits.
+The following steps, illustrated in the accompanying flowchart, summarize how 10GO processes a Mercado Pago transaction email into a verifiable withdrawal:
+
+```mermaid
+flowchart TD
+    A[Mercado Pago .eml Email File] --> B[ZK Email Verifier]
+    A --> C[ZK Regex for CBU/CVU]
+    B & C --> D[MercadoPagoTransferencia Circuit]
+    D --> E[
+        Proof:
+        - Email authenticity
+        - CBU/CVU presence
+        - Amount
+        - Date
+        - Sender/Recipient
+    ]
+    E --> F[Generate ZK Proof]
+    F --> G[EscrowMP Contract]
+    G --> H[Groth16Verifier Contract]
+    H --> I[Verify Proof On-chain]
+    I --> J{Proof Valid?}
+    J -->|Yes| K[Execute Withdrawal]
+    J -->|No| L[Reject Transaction]
+    K & L --> M[Update Escrow State]
+    
+    style E fill:none,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5
+```
+
+1. **Email Processing**: The system starts by processing a Mercado Pago .eml email file containing transaction details.
+
+2. **ZK Circuits**: Two zero-knowledge circuits work in parallel:
+   - The ZK Email Verifier checks the DKIM signature to ensure email authenticity.
+   - The ZK Regex extracts the CBU/CVU number from the email body.
+
+3. **Proof Generation**: The MercadoPagoTransferencia circuit combines the results to generate a zero-knowledge proof. This proof confirms the email's authenticity, the presence of the specific CBU/CVU, transaction amount, date, and relevant party information, all without revealing the raw email contents.
+
+4. **Smart Contract Interaction**: The user initiates a withdrawal by interacting with the EscrowMP smart contract, providing the generated ZK proof.
+
+5. **On-chain Verification**: The EscrowMP contract calls the Groth16Verifier contract, which performs cryptographic verification of the proof using embedded verification keys and pairing operations.
+
+6. **Withdrawal Execution**: If the proof is valid, the EscrowMP contract executes the withdrawal, transferring the specified amount to the user. If invalid, the transaction is rejected.
+
+7. **Escrow State Update**: The EscrowMP contract updates the escrow state to reflect the withdrawal or maintain the current state if the transaction was rejected.
 
 ## About
 
