@@ -29,7 +29,7 @@ flowchart TD
     B & C --> D[MercadoPagoTransferencia Circuit]
     D --> E[
         Proof:
-        - Email authenticity
+        - Email authenticity DKIM
         - CBU/CVU presence
         - Amount
         - Date
