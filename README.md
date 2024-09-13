@@ -10,6 +10,8 @@
 
 10GO is a decentralized platform designed to onboard users from traditional payment systems like Mercado Pago into the world of crypto. By leveraging zero-knowledge proofs for decentralized settlement and account abstraction, 10GO simplifies the transition to crypto for new users, while laying the foundation for future features like collateralized lending and microcredits.
 
+With 10GO, you've got it! ✊
+
 ## Repository Structure
 
 - **[Front-end Code](https://github.com/10GO-labs/10GO-frontend)**: Source code for the front-end application.
